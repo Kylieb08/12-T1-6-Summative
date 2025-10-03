@@ -5,7 +5,11 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Die die1, die2;
+            bool done = false;
+            double balance = 100, bet;
+
+            Console.WriteLine("Hello, World!");            
         }
     }
 }
