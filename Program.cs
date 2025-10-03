@@ -89,6 +89,13 @@
                             }
 
                                 break;
+
+                        case "quit":
+                            Console.Clear();
+                            Console.WriteLine("Thank you for playing");
+                            Console.WriteLine($"You ended with {balance} dollars in your account");
+                            done = true;
+                            break;
                     }
                 }
             }
