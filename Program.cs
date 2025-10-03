@@ -90,6 +90,45 @@
 
                                 break;
 
+                        case "not doubles":
+                            Console.Clear();
+                            Console.WriteLine("You bet on not doubles");
+                            Console.WriteLine("How much would you like to bet?");
+
+                            while (!double.TryParse(Console.ReadLine(), out bet))
+                            {
+                                Console.WriteLine("That is not a valid number");
+                                Console.WriteLine("Please try again");
+                            }
+
+                            if (bet > balance)
+                            {
+                                Console.WriteLine("You bet more than your balance");
+                                Console.WriteLine("You are all in");
+                                bet = balance;
+                            }
+
+                            Console.WriteLine();
+                            Console.WriteLine($"You bet {bet} dollars");
+                            die1.DrawRoll();
+                            die2.DrawRoll();
+
+                            if (die1.Roll != die2.Roll)
+                            {
+                                Console.WriteLine("Congratulations! You win");
+                                balance += (bet / 2);
+                                Console.WriteLine($"You have {balance} dollars in your account");
+                            }
+
+                            else
+                            {
+                                Console.WriteLine("You lost");
+                                balance -= (bet / 2);
+                                Console.WriteLine($"You have {balance} dollars in your account");
+                            }
+
+                            break;
+
                         case "quit":
                             Console.Clear();
                             Console.WriteLine("Thank you for playing");
