@@ -11,7 +11,6 @@
             bool done = false;
             double balance = 100, bet;
             string outcomeGuess;
-            //int sum;
 
             die1 = new Die();
             die2 = new Die();
@@ -94,8 +93,8 @@
                                 balance -= (bet * 2);
                                 Console.WriteLine($"You have {balance} dollars in your account");
                             }
-
-                                break;
+                            Console.WriteLine();
+                            break;
 
                         case "not doubles":
                             Console.Clear();
@@ -133,7 +132,7 @@
                                 balance -= (bet / 2);
                                 Console.WriteLine($"You have {balance} dollars in your account");
                             }
-
+                            Console.WriteLine();
                             break;
 
                         case "odd sum":
@@ -172,7 +171,8 @@
                                 balance -= bet;
                                 Console.WriteLine($"You have {balance} dollars in your account");
                             }
-                                break;
+                            Console.WriteLine();
+                            break;
 
                         case "even sum":
                             Console.Clear();
@@ -210,6 +210,7 @@
                                 balance -= bet;
                                 Console.WriteLine($"You have {balance} dollars in your account");
                             }
+                            Console.WriteLine();
                             break;
 
                         case "rules":
@@ -227,6 +228,7 @@
                             Console.WriteLine("Betting on not doubles will win you half your bet");
                             Console.WriteLine("Betting on an odd sum or an even sum will win you exactly your bet");
                             Console.WriteLine("You can choose to quit when prompted for which outcome you would like to bet on");
+                            Console.WriteLine();
                             break;
 
                         case "quit":
@@ -234,6 +236,13 @@
                             Console.WriteLine("Thank you for playing");
                             Console.WriteLine($"You ended with {balance} dollars in your account");
                             done = true;
+                            break;
+
+                        default:
+                            Console.Clear();
+                            Console.WriteLine("Invalid input");
+                            Console.WriteLine("Please try again");
+                            Console.WriteLine();
                             break;
                     }
                 }
