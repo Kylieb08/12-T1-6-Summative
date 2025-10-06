@@ -1,6 +1,8 @@
 ﻿namespace _12_T1_6_Summative
 {
     using _12_T5._5_Classes;
+    using System;
+
     internal class Program
     {
         static void Main(string[] args)
@@ -9,6 +11,7 @@
             bool done = false;
             double balance = 100, bet;
             string outcomeGuess;
+            //int sum;
 
             die1 = new Die();
             die2 = new Die();
@@ -16,7 +19,9 @@
             Console.WriteLine("Welcome to the casino!");
             Console.WriteLine("You have 100$ in your account to start.");
             Console.WriteLine("You can use that money to bet on the outcome of a dice roll.");
+            Console.WriteLine("You must bet at least one dollar");
             Console.WriteLine("If you bet more than your balance, it will be assumed that you are all in");
+            Console.WriteLine();
             Console.WriteLine("The house will roll two dice, and you will bet on whether you think");
             Console.WriteLine("it will be doubles, not doubles, an odd sum, or an even sum.");
             Console.WriteLine("Each option will win you different amounts of money.");
@@ -24,7 +29,8 @@
             Console.WriteLine("Betting on doubles will win you twice your bet");
             Console.WriteLine("Betting on not doubles will win you half your bet");
             Console.WriteLine("Betting on an odd sum or an even sum will win you exactly your bet");
-            Console.WriteLine("You can also choose to quit when prompted for which outcome you would like to bet on");
+            Console.WriteLine("You can choose to quit when prompted for which outcome you would like to bet on");
+            Console.WriteLine("You also have the option to reread the rules");
 
             while (!done)
             {
@@ -45,7 +51,8 @@
                     Console.WriteLine("2. Not Doubles");
                     Console.WriteLine("3. Odd Sum");
                     Console.WriteLine("4. Even Sum");
-                    Console.WriteLine("5. Quit");
+                    Console.WriteLine("5. Rules");
+                    Console.WriteLine("6. Quit");
 
                     outcomeGuess = Console.ReadLine().ToLower();
 
@@ -56,7 +63,7 @@
                             Console.WriteLine("You bet on doubles");
                             Console.WriteLine("How much would you like to bet?");
 
-                            while (!double.TryParse(Console.ReadLine(), out bet))
+                            while (!double.TryParse(Console.ReadLine(), out bet) || bet < 1)
                             {
                                 Console.WriteLine("That is not a valid number");
                                 Console.WriteLine("Please try again");
@@ -95,7 +102,7 @@
                             Console.WriteLine("You bet on not doubles");
                             Console.WriteLine("How much would you like to bet?");
 
-                            while (!double.TryParse(Console.ReadLine(), out bet))
+                            while (!double.TryParse(Console.ReadLine(), out bet) || bet < 1)
                             {
                                 Console.WriteLine("That is not a valid number");
                                 Console.WriteLine("Please try again");
@@ -127,6 +134,99 @@
                                 Console.WriteLine($"You have {balance} dollars in your account");
                             }
 
+                            break;
+
+                        case "odd sum":
+                            Console.Clear();
+                            Console.WriteLine("You bet on odd sum");
+                            Console.WriteLine("How much would you like to bet?");
+
+                            while (!double.TryParse(Console.ReadLine(), out bet) || bet < 1)
+                            {
+                                Console.WriteLine("That is not a valid number");
+                                Console.WriteLine("Please try again");
+                            }
+
+                            if (bet > balance)
+                            {
+                                Console.WriteLine("You bet more than your balance");
+                                Console.WriteLine("You are all in");
+                                bet = balance;
+                            }
+
+                            Console.WriteLine();
+                            Console.WriteLine($"You bet {bet} dollars");
+                            die1.DrawRoll();
+                            die2.DrawRoll();
+
+                            if ((die1.Roll + die2.Roll) % 2 != 0)
+                            {
+                                Console.WriteLine("Congratulations! You win!");
+                                balance += bet;
+                                Console.WriteLine($"You have {balance} dollars in your account");
+                            }
+
+                            else
+                            {
+                                Console.WriteLine("You lost");
+                                balance -= bet;
+                                Console.WriteLine($"You have {balance} dollars in your account");
+                            }
+                                break;
+
+                        case "even sum":
+                            Console.Clear();
+                            Console.WriteLine("You bet on even sum");
+                            Console.WriteLine("How much would you like to bet?");
+
+                            while (!double.TryParse(Console.ReadLine(), out bet) || bet < 1)
+                            {
+                                Console.WriteLine("That is not a valid number");
+                                Console.WriteLine("Please try again");
+                            }
+
+                            if (bet > balance)
+                            {
+                                Console.WriteLine("You bet more than your balance");
+                                Console.WriteLine("You are all in");
+                                bet = balance;
+                            }
+
+                            Console.WriteLine();
+                            Console.WriteLine($"You bet {bet} dollars");
+                            die1.DrawRoll();
+                            die2.DrawRoll();
+
+                            if ((die1.Roll + die2.Roll) % 2 == 0)
+                            {
+                                Console.WriteLine("Congratulations! You win!");
+                                balance += bet;
+                                Console.WriteLine($"You have {balance} dollars in your account");
+                            }
+
+                            else
+                            {
+                                Console.WriteLine("You lost");
+                                balance -= bet;
+                                Console.WriteLine($"You have {balance} dollars in your account");
+                            }
+                            break;
+
+                        case "rules":
+                            Console.Clear();
+                            Console.WriteLine($"You have {balance} dollars in your account.");
+                            Console.WriteLine("You can use that money to bet on the outcome of a dice roll.");
+                            Console.WriteLine("You must bet at least one dollar");
+                            Console.WriteLine("If you bet more than your balance, it will be assumed that you are all in");
+                            Console.WriteLine();
+                            Console.WriteLine("The house will roll two dice, and you will bet on whether you think");
+                            Console.WriteLine("it will be doubles, not doubles, an odd sum, or an even sum.");
+                            Console.WriteLine("Each option will win you different amounts of money.");
+                            Console.WriteLine();
+                            Console.WriteLine("Betting on doubles will win you twice your bet");
+                            Console.WriteLine("Betting on not doubles will win you half your bet");
+                            Console.WriteLine("Betting on an odd sum or an even sum will win you exactly your bet");
+                            Console.WriteLine("You can choose to quit when prompted for which outcome you would like to bet on");
                             break;
 
                         case "quit":
