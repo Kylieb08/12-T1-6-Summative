@@ -84,6 +84,7 @@
                             {
                                 Console.WriteLine("Congratulations! You win");
                                 balance += (bet * 2);
+                                Console.WriteLine($"You won {(bet * 2)} dollars");
                                 Console.WriteLine($"You have {balance} dollars in your account");
                             }
 
@@ -91,6 +92,7 @@
                             {
                                 Console.WriteLine("You lost");
                                 balance -= (bet * 2);
+                                Console.WriteLine($"You lost {(bet * 2 )} dollars");
                                 Console.WriteLine($"You have {balance} dollars in your account");
                             }
                             Console.WriteLine();
@@ -123,6 +125,7 @@
                             {
                                 Console.WriteLine("Congratulations! You win");
                                 balance += (bet / 2);
+                                Console.WriteLine($"You won {(bet / 2)} dollars");
                                 Console.WriteLine($"You have {balance} dollars in your account");
                             }
 
@@ -130,6 +133,7 @@
                             {
                                 Console.WriteLine("You lost");
                                 balance -= (bet / 2);
+                                Console.WriteLine($"You lost {(bet / 2)} dollars");
                                 Console.WriteLine($"You have {balance} dollars in your account");
                             }
                             Console.WriteLine();
@@ -162,6 +166,7 @@
                             {
                                 Console.WriteLine("Congratulations! You win!");
                                 balance += bet;
+                                Console.WriteLine($"You won {bet} dollars");
                                 Console.WriteLine($"You have {balance} dollars in your account");
                             }
 
@@ -169,6 +174,7 @@
                             {
                                 Console.WriteLine("You lost");
                                 balance -= bet;
+                                Console.WriteLine($"You lost {bet} dollars");
                                 Console.WriteLine($"You have {balance} dollars in your account");
                             }
                             Console.WriteLine();
@@ -201,6 +207,7 @@
                             {
                                 Console.WriteLine("Congratulations! You win!");
                                 balance += bet;
+                                Console.WriteLine($"You won {bet} dollars");
                                 Console.WriteLine($"You have {balance} dollars in your account");
                             }
 
@@ -208,6 +215,7 @@
                             {
                                 Console.WriteLine("You lost");
                                 balance -= bet;
+                                Console.WriteLine($"You lost {bet} dollars");
                                 Console.WriteLine($"You have {balance} dollars in your account");
                             }
                             Console.WriteLine();
