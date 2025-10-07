@@ -159,8 +159,7 @@
 
                             Console.WriteLine();
                             Console.WriteLine($"You bet {bet} dollars");
-                            die1.DrawRoll();
-                            die2.DrawRoll();
+                            
 
                             if ((die1.Roll + die2.Roll) % 2 != 0)
                             {
@@ -177,6 +176,10 @@
                                 Console.WriteLine($"You lost {bet} dollars");
                                 Console.WriteLine($"You have {balance} dollars in your account");
                             }
+
+                            die1.Colour = ConsoleColor.Green;
+                            die1.DrawRoll();
+                            die2.DrawRoll();
                             Console.WriteLine();
                             break;
 

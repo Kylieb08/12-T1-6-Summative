@@ -28,6 +28,12 @@ namespace _12_T5._5_Classes
             _colour = colour;
         }
 
+        public ConsoleColor Colour
+        {
+            get { return _colour; }
+            set { _colour = value; }
+        }
+
         public Die (int roll)
         {
             _colour = ConsoleColor.Blue;
