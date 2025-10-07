@@ -77,24 +77,33 @@
 
                             Console.WriteLine();
                             Console.WriteLine($"You bet {bet} dollars");
-                            die1.DrawRoll();
-                            die2.DrawRoll();
 
                             if (die1.Roll == die2.Roll)
                             {
+                                die1.Colour = ConsoleColor.Green;
+                                die2.Colour = ConsoleColor.Green;
+                                die1.DrawRoll();
+                                die2.DrawRoll();
+                                Console.WriteLine();
                                 Console.WriteLine("Congratulations! You win");
                                 balance += (bet * 2);
                                 Console.WriteLine($"You won {(bet * 2)} dollars");
                                 Console.WriteLine($"You have {balance} dollars in your account");
+                                
                             }
 
                             else
                             {
-                                Console.WriteLine("You lost");
+                                die1.Colour = ConsoleColor.Red;
+                                die2.Colour = ConsoleColor.Red;
+                                die1.DrawRoll();
+                                die2.DrawRoll();
+                                Console.WriteLine();
                                 balance -= (bet * 2);
                                 Console.WriteLine($"You lost {(bet * 2 )} dollars");
                                 Console.WriteLine($"You have {balance} dollars in your account");
                             }
+                            
                             Console.WriteLine();
                             break;
 
@@ -118,11 +127,14 @@
 
                             Console.WriteLine();
                             Console.WriteLine($"You bet {bet} dollars");
-                            die1.DrawRoll();
-                            die2.DrawRoll();
 
                             if (die1.Roll != die2.Roll)
                             {
+                                die1.Colour = ConsoleColor.Green;
+                                die2.Colour = ConsoleColor.Green;
+                                die1.DrawRoll();
+                                die2.DrawRoll();
+                                Console.WriteLine();
                                 Console.WriteLine("Congratulations! You win");
                                 balance += (bet / 2);
                                 Console.WriteLine($"You won {(bet / 2)} dollars");
@@ -131,7 +143,11 @@
 
                             else
                             {
-                                Console.WriteLine("You lost");
+                                die1.Colour = ConsoleColor.Red;
+                                die2.Colour = ConsoleColor.Red;
+                                die1.DrawRoll();
+                                die2.DrawRoll();
+                                Console.WriteLine();
                                 balance -= (bet / 2);
                                 Console.WriteLine($"You lost {(bet / 2)} dollars");
                                 Console.WriteLine($"You have {balance} dollars in your account");
@@ -163,6 +179,11 @@
 
                             if ((die1.Roll + die2.Roll) % 2 != 0)
                             {
+                                die1.Colour = ConsoleColor.Green;
+                                die2.Colour = ConsoleColor.Green;
+                                die1.DrawRoll();
+                                die2.DrawRoll();
+                                Console.WriteLine();
                                 Console.WriteLine("Congratulations! You win!");
                                 balance += bet;
                                 Console.WriteLine($"You won {bet} dollars");
@@ -171,15 +192,15 @@
 
                             else
                             {
-                                Console.WriteLine("You lost");
+                                die1.Colour = ConsoleColor.Red;
+                                die2.Colour = ConsoleColor.Red;
+                                die1.DrawRoll();
+                                die2.DrawRoll();
+                                Console.WriteLine();
                                 balance -= bet;
                                 Console.WriteLine($"You lost {bet} dollars");
                                 Console.WriteLine($"You have {balance} dollars in your account");
                             }
-
-                            die1.Colour = ConsoleColor.Green;
-                            die1.DrawRoll();
-                            die2.DrawRoll();
                             Console.WriteLine();
                             break;
 
@@ -203,11 +224,14 @@
 
                             Console.WriteLine();
                             Console.WriteLine($"You bet {bet} dollars");
-                            die1.DrawRoll();
-                            die2.DrawRoll();
 
                             if ((die1.Roll + die2.Roll) % 2 == 0)
                             {
+                                die1.Colour = ConsoleColor.Green;
+                                die2.Colour = ConsoleColor.Green;
+                                die1.DrawRoll();
+                                die2.DrawRoll();
+                                Console.WriteLine();
                                 Console.WriteLine("Congratulations! You win!");
                                 balance += bet;
                                 Console.WriteLine($"You won {bet} dollars");
@@ -216,11 +240,17 @@
 
                             else
                             {
-                                Console.WriteLine("You lost");
+                                die1.Colour = ConsoleColor.Red;
+                                die2.Colour = ConsoleColor.Red;
+                                die1.DrawRoll();
+                                die2.DrawRoll();
+                                Console.WriteLine();
                                 balance -= bet;
                                 Console.WriteLine($"You lost {bet} dollars");
                                 Console.WriteLine($"You have {balance} dollars in your account");
+                                
                             }
+
                             Console.WriteLine();
                             break;
 
