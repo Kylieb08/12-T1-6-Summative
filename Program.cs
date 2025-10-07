@@ -62,7 +62,7 @@
                             Console.WriteLine("You bet on doubles");
                             Console.WriteLine("How much would you like to bet?");
 
-                            while (!double.TryParse(Console.ReadLine(), out bet) || bet < 1)
+                            while (!double.TryParse(Console.ReadLine(), out bet) || bet < 0.01)
                             {
                                 Console.WriteLine("That is not a valid number");
                                 Console.WriteLine("Please try again");
@@ -112,7 +112,7 @@
                             Console.WriteLine("You bet on not doubles");
                             Console.WriteLine("How much would you like to bet?");
 
-                            while (!double.TryParse(Console.ReadLine(), out bet) || bet < 1)
+                            while (!double.TryParse(Console.ReadLine(), out bet) || bet < 0.01)
                             {
                                 Console.WriteLine("That is not a valid number");
                                 Console.WriteLine("Please try again");
@@ -160,7 +160,7 @@
                             Console.WriteLine("You bet on odd sum");
                             Console.WriteLine("How much would you like to bet?");
 
-                            while (!double.TryParse(Console.ReadLine(), out bet) || bet < 1)
+                            while (!double.TryParse(Console.ReadLine(), out bet) || bet < 0.01)
                             {
                                 Console.WriteLine("That is not a valid number");
                                 Console.WriteLine("Please try again");
@@ -209,7 +209,7 @@
                             Console.WriteLine("You bet on even sum");
                             Console.WriteLine("How much would you like to bet?");
 
-                            while (!double.TryParse(Console.ReadLine(), out bet) || bet < 1)
+                            while (!double.TryParse(Console.ReadLine(), out bet) || bet < 0.01)
                             {
                                 Console.WriteLine("That is not a valid number");
                                 Console.WriteLine("Please try again");
